@@ -3,89 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hosen Tinawi | مركز التقنية المتقدمة</title>
+    <title>Tinawi Tech | منصة الصيانة المتقدمة</title>
     <style>
         :root { --primary: #38bdf8; --bg: #020617; --card: #1e293b; --text: #f8fafc; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* واجهة الدخول (Hero Section) */
-        header { 
-            height: 60vh;
-            background: linear-gradient(45deg, rgba(2,6,23,0.9), rgba(56,189,248,0.2)), url('https://images.unsplash.com/photo-1540575440341-158a01754616?q=80&w=1000'); /* يمكنك استبدال الرابط بصورة محلك */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-        }
+        /* التنقل بين الواجهات */
+        .page { display: none; padding: 20px; min-height: 100vh; }
+        .page.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 20px; box-shadow: 0 0 20px var(--primary); }
-        h1 { font-size: 2.5rem; margin: 0; color: var(--primary); }
-        
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-        
-        /* قسم السوفتوير والتفاصيل */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid #334155; transition: 0.4s; }
-        .card:hover { transform: scale(1.03); border-color: var(--primary); }
-        .card-img { width: 100%; height: 180px; background-color: #0f172a; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-        .card-content { padding: 20px; }
-        .card-content h3 { color: var(--primary); margin-top: 0; }
-        
-        .details-list { list-style: none; padding: 0; font-size: 0.9rem; color: #94a3b8; }
-        .details-list li { margin-bottom: 8px; display: flex; align-items: center; }
-        .details-list li::before { content: '✔'; color: var(--primary); margin-left: 10px; }
+        /* الشاشة الرئيسية */
+        .home-hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(2,6,23,1) 100%); }
+        .logo-ring { width: 150px; height: 150px; border: 4px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 20px; box-shadow: 0 0 30px var(--primary); }
 
-        .btn { display: block; width: fit-content; margin: 40px auto; background: var(--primary); color: #020617; padding: 15px 40px; border-radius: 50px; font-weight: bold; text-decoration: none; transition: 0.3s; }
-        .btn:hover { background: #fff; box-shadow: 0 0 30px var(--primary); }
+        /* الأزرار */
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 90%; max-width: 400px; }
+        .nav-btn { background: var(--card); border: 1px solid var(--primary); color: white; padding: 20px; border-radius: 15px; cursor: pointer; text-align: center; font-weight: bold; transition: 0.3s; }
+        .nav-btn:hover { background: var(--primary); color: #000; }
+
+        /* واجهة السوفتوير */
+        .software-details { background: var(--card); border-radius: 20px; padding: 25px; margin-top: 20px; border-right: 5px solid var(--primary); }
+        .back-btn { background: none; border: 1px solid #94a3b8; color: #94a3b8; padding: 8px 20px; border-radius: 10px; cursor: pointer; margin-bottom: 20px; }
+
+        .service-item { display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .service-item i { font-size: 1.5rem; margin-left: 15px; color: var(--primary); }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="https://via.placeholder.com/150" alt="Hosen Tinawi" class="profile-img">
-    <h1>حسين تيناوي</h1>
-    <p>خبير صيانة الأنظمة الذكية وتكنولوجيا الهواتف</p>
-</header>
-
-<div class="container">
-    <div class="grid">
-        <div class="card">
-            <div class="card-img">💻</div>
-            <div class="card-content">
-                <h3>قسم السوفتوير والأنظمة</h3>
-                <ul class="details-list">
-                    <li>فك أقفال الشبكات وحسابات (FRP).</li>
-                    <li>تثبيت الرومات الرسمية والمعدلة.</li>
-                    <li>إصلاح مشاكل الإقلاع (Bootloop).</li>
-                    <li>تعريب الأنظمة وتحديث البرمجيات.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">🔬</div>
-            <div class="card-content">
-                <h3>صيانة الهاردوير الدقيقة</h3>
-                <ul class="details-list">
-                    <li>إصلاح أعطال البورد تحت الميكروسكوب.</li>
-                    <li>تبديل الآيسيات (IC) ومعالجة الشورت.</li>
-                    <li>حل مشاكل الشحن والإضاءة.</li>
-                    <li>تبديل الشاشات والبطاريات الأصلية.</li>
-                </ul>
+    <div id="home" class="page active">
+        <div class="home-hero">
+            <div class="logo-ring">HT</div>
+            <h1>TINAWI TECH</h1>
+            <p>اختر القسم المطلوب للبدء</p>
+            <div class="menu-grid">
+                <div class="nav-btn" onclick="showPage('software')">💻 واجهة السوفتوير</div>
+                <div class="nav-btn" onclick="showPage('hardware')">🔬 واجهة الهاردوير</div>
+                <div class="nav-btn" onclick="showPage('about')">👨‍💻 من أنا</div>
+                <div class="nav-btn" onclick="window.location.href='https://wa.me/رقمك'">💬 تواصل الآن</div>
             </div>
         </div>
     </div>
 
-    <a href="https://wa.me/905xxxxxxxxx" class="btn">تواصل للاستشارة الفنية</a>
-</div>
+    <div id="software" class="page">
+        <button class="back-btn" onclick="showPage('home')">← رجوع</button>
+        <h2>مركز الحلول البرمجية (Software)</h2>
+        <div class="software-details">
+            <div class="service-item">🔓 فك أقفال الحسابات (FRP / iCloud)</div>
+            <div class="service-item">🔄 تثبيت رومات رسمية وحل مشاكل الوقوف على اللوجو</div>
+            <div class="service-item">🔧 إصلاح مشاكل الـ IMEI وتعديل الأنظمة</div>
+            <div class="service-item">🌍 تعريب كامل لجميع الموديلات (شاومي، سامسونج، آيفون)</div>
+        </div>
+    </div>
 
-<footer style="text-align: center; padding: 20px; color: #64748b;">
-    Tinawi Tech © 2026 | Bursa - Damascus
-</footer>
+    <div id="hardware" class="page">
+        <button class="back-btn" onclick="showPage('home')">← رجوع</button>
+        <h2>مركز الصيانة الهندسية (Hardware)</h2>
+        <div class="software-details">
+            <div class="service-item">🔍 فحص البورد تحت الميكروسكوب الرقمي</div>
+            <div class="service-item">🔋 تبديل بطاريات وشاشات أصلية مع الكفالة</div>
+            <div class="service-item">💎 إصلاح أعطال الشحن والباور (IC)</div>
+            <div class="service-item">💧 صيانة الأجهزة المتضررة بالسوائل</div>
+        </div>
+    </div>
 
+    <script>
+        function showPage(pageId) {
+            // إخفاء كل الصفحات
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // إظهار الصفحة المطلوبة
+            document.getElementById(pageId).classList.add('active');
+            // العودة لأعلى الصفحة
+            window.scrollTo(0,0);
+        }
+    </script>
 </body>
 </html>
