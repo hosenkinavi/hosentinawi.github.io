@@ -3,78 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinawi Tech | منصة الصيانة المتقدمة</title>
+    <title>Hosen Tinawi | Tinawi Tech</title>
     <style>
         :root { --primary: #38bdf8; --bg: #020617; --card: #1e293b; --text: #f8fafc; }
         body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* التنقل بين الواجهات */
+        /* التنقل */
         .page { display: none; padding: 20px; min-height: 100vh; }
         .page.active { display: block; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* الشاشة الرئيسية */
-        .home-hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(2,6,23,1) 100%); }
-        .logo-ring { width: 150px; height: 150px; border: 4px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 20px; box-shadow: 0 0 30px var(--primary); }
+        .home-hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .profile-img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--primary); margin-bottom: 20px; box-shadow: 0 0 30px var(--primary); object-fit: cover; }
 
         /* الأزرار */
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 90%; max-width: 400px; }
-        .nav-btn { background: var(--card); border: 1px solid var(--primary); color: white; padding: 20px; border-radius: 15px; cursor: pointer; text-align: center; font-weight: bold; transition: 0.3s; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 95%; max-width: 450px; }
+        .nav-btn { background: var(--card); border: 1px solid var(--primary); color: white; padding: 20px; border-radius: 15px; cursor: pointer; text-align: center; font-weight: bold; transition: 0.3s; font-size: 0.9rem; }
         .nav-btn:hover { background: var(--primary); color: #000; }
 
-        /* واجهة السوفتوير */
-        .software-details { background: var(--card); border-radius: 20px; padding: 25px; margin-top: 20px; border-right: 5px solid var(--primary); }
+        /* التفاصيل */
+        .details-box { background: var(--card); border-radius: 20px; padding: 25px; margin-top: 20px; border-right: 5px solid var(--primary); }
         .back-btn { background: none; border: 1px solid #94a3b8; color: #94a3b8; padding: 8px 20px; border-radius: 10px; cursor: pointer; margin-bottom: 20px; }
-
         .service-item { display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 10px; }
-        .service-item i { font-size: 1.5rem; margin-left: 15px; color: var(--primary); }
+        
+        .bio-text { line-height: 1.8; color: #cbd5e1; }
+        .highlight { color: var(--primary); font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div id="home" class="page active">
         <div class="home-hero">
-            <div class="logo-ring">HT</div>
-            <h1>TINAWI TECH</h1>
-            <p>اختر القسم المطلوب للبدء</p>
+            <img src="me.jpg" alt="حسين تيناوي" class="profile-img">
+            <h1>حسين تيناوي</h1>
+            <p>Tinawi Tech | خبير صيانة الهواتف</p>
             <div class="menu-grid">
                 <div class="nav-btn" onclick="showPage('software')">💻 واجهة السوفتوير</div>
                 <div class="nav-btn" onclick="showPage('hardware')">🔬 واجهة الهاردوير</div>
-                <div class="nav-btn" onclick="showPage('about')">👨‍💻 من أنا</div>
-                <div class="nav-btn" onclick="window.location.href='https://wa.me/رقمك'">💬 تواصل الآن</div>
+                <div class="nav-btn" onclick="showPage('about')">👨‍💻 من أنا (السيرة)</div>
+                <div class="nav-btn" onclick="window.location.href='https://wa.me/905317337891'">💬 واتساب مباشر</div>
             </div>
         </div>
     </div>
 
     <div id="software" class="page">
         <button class="back-btn" onclick="showPage('home')">← رجوع</button>
-        <h2>مركز الحلول البرمجية (Software)</h2>
-        <div class="software-details">
+        <h2>مركز الحلول البرمجية</h2>
+        <div class="details-box">
             <div class="service-item">🔓 فك أقفال الحسابات (FRP / iCloud)</div>
-            <div class="service-item">🔄 تثبيت رومات رسمية وحل مشاكل الوقوف على اللوجو</div>
-            <div class="service-item">🔧 إصلاح مشاكل الـ IMEI وتعديل الأنظمة</div>
-            <div class="service-item">🌍 تعريب كامل لجميع الموديلات (شاومي، سامسونج، آيفون)</div>
+            <div class="service-item">🔄 تثبيت رومات رسمية وحل مشاكل اللوجو</div>
+            <div class="service-item">🔧 إصلاح الـ IMEI وتعديل الأنظمة</div>
+            <div class="service-item">🌍 تعريب كامل لجميع الموديلات</div>
         </div>
     </div>
 
     <div id="hardware" class="page">
         <button class="back-btn" onclick="showPage('home')">← رجوع</button>
-        <h2>مركز الصيانة الهندسية (Hardware)</h2>
-        <div class="software-details">
-            <div class="service-item">🔍 فحص البورد تحت الميكروسكوب الرقمي</div>
-            <div class="service-item">🔋 تبديل بطاريات وشاشات أصلية مع الكفالة</div>
-            <div class="service-item">💎 إصلاح أعطال الشحن والباور (IC)</div>
-            <div class="service-item">💧 صيانة الأجهزة المتضررة بالسوائل</div>
+        <h2>مركز الصيانة الهندسية</h2>
+        <div class="details-box">
+            <div class="service-item">🔍 فحص البورد تحت الميكروسكوب</div>
+            <div class="service-item">🔋 تبديل بطاريات وشاشات أصلية</div>
+            <div class="service-item">💎 إصلاح أعطال الشحن والباور</div>
+            <div class="service-item">💧 صيانة أضرار السوائل والرطوبة</div>
+        </div>
+    </div>
+
+    <div id="about" class="page">
+        <button class="back-btn" onclick="showPage('home')">← رجوع</button>
+        <h2>السيرة الذاتية المهنية</h2>
+        <div class="details-box">
+            <p class="bio-text">
+                أنا <span class="highlight">حسين تيناوي</span>، متخصص في تكنولوجيا الهواتف الذكية بخبرة تمتد لسنوات في صيانة الأنظمة المتقدمة.
+                <br><br>
+                مؤسس <span class="highlight">Tinawi Tech</span>، أعمل على تقديم حلول تقنية مبتكرة تشمل صيانة الهاردوير الدقيقة وحلول السوفتوير المعقدة. أتواجد لخدمتكم بين <span class="highlight">بورصة ودمشق</span>، مع التزام تام بدقة المواعيد وجودة القطع المستخدمة.
+                <br><br>
+                طموحي هو تطوير المحتوى التقني العربي وتقديم استشارات تساهم في رفع وعي المستخدمين وحماية أجهزتهم.
+            </p>
+            <div class="service-item">📞 الهاتف: 05317337891</div>
+            <div class="service-item">📍 الموقع: بورصة - تركيا / دمشق - سوريا</div>
         </div>
     </div>
 
     <script>
         function showPage(pageId) {
-            // إخفاء كل الصفحات
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            // إظهار الصفحة المطلوبة
             document.getElementById(pageId).classList.add('active');
-            // العودة لأعلى الصفحة
             window.scrollTo(0,0);
         }
     </script>
