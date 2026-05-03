@@ -13,25 +13,26 @@
         .page.active { display: block; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* الشاشة الرئيسية: الصورة الجديدة كخلفية */
+        /* الشاشة الرئيسية: استخدام الاسم الاحترافي tinawi_expert.png */
         .home-hero { 
             height: 100vh; 
             display: flex; 
             flex-direction: column; 
-            justify-content: flex-end; /* لتركيز المحتوى في الأسفل */
+            justify-content: flex-end; 
             align-items: center; 
             text-align: center; 
-            background: linear-gradient(rgba(2,6,23,0.5), rgba(2,6,23,1)), url('1777758224168.png'); /* استبدل برابط صورتك الجديدة */
+            background: linear-gradient(rgba(2,6,23,0.4), rgba(2,6,23,0.9)), url('./tinawi_expert.png'); 
             background-size: cover; 
-            background-position: center top; /* للتركيز على الوجه */
+            background-position: center center;
+            background-attachment: fixed;
         }
 
         /* حاوية أزرار الصفحة الرئيسية */
-        .home-controls { padding: 40px 20px; background: rgba(2,6,23,0.8); border-radius: 30px 30px 0 0; width: 100%; max-width: 450px; }
+        .home-controls { padding: 40px 20px; background: rgba(2,6,23,0.85); border-radius: 30px 30px 0 0; width: 100%; max-width: 450px; backdrop-filter: blur(5px); }
 
-        /* الأزرار التنقل */
+        /* أزرار التنقل */
         .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .nav-btn { background: var(--card); border: 1px solid var(--primary); color: white; padding: 20px; border-radius: 15px; cursor: pointer; text-align: center; font-weight: bold; transition: 0.3s; font-size: 0.9rem; }
+        .nav-btn { background: var(--card); border: 1px solid var(--primary); color: white; padding: 18px; border-radius: 15px; cursor: pointer; text-align: center; font-weight: bold; transition: 0.3s; font-size: 0.85rem; }
         .nav-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
 
         /* تفاصيل الواجهات الداخلية */
@@ -48,7 +49,8 @@
     <div id="home" class="page active">
         <div class="home-hero">
             <div class="home-controls">
-                <p>Tinawi Tech | منصة الصيانة والحلول</p>
+                <h1 style="margin:0 0 10px 0; font-size: 1.5rem; color: var(--primary);">TINAWI TECH</h1>
+                <p style="margin-bottom: 25px; font-size: 0.9rem;">منصة الصيانة والحلول المتقدمة</p>
                 <div class="menu-grid">
                     <div class="nav-btn" onclick="showPage('software')">💻 واجهة السوفتوير</div>
                     <div class="nav-btn" onclick="showPage('hardware')">🔬 واجهة الهاردوير</div>
@@ -61,22 +63,22 @@
 
     <div id="software" class="page">
         <button class="back-btn" onclick="showPage('home')">← رجوع</button>
-        <h2>واجهة الحلول البرمجية (Software)</h2>
+        <h2>واجهة الحلول البرمجية</h2>
         <div class="details-box">
             <div class="service-item">🔓 فك أقفال الحسابات (FRP / iCloud)</div>
-            <div class="service-item">🔄 تثبيت رومات رسمية وحل مشاكل الوقوف على اللوجو</div>
-            <div class="service-item">🔧 إصلاح مشاكل الـ IMEI وتعديل الأنظمة</div>
+            <div class="service-item">🔄 تثبيت رومات وحل مشاكل اللوجو</div>
+            <div class="service-item">🔧 إصلاح الـ IMEI وتعديل الأنظمة</div>
             <div class="service-item">🌍 تعريب كامل لجميع الموديلات</div>
         </div>
     </div>
 
     <div id="hardware" class="page">
         <button class="back-btn" onclick="showPage('home')">← رجوع</button>
-        <h2>واجهة الصيانة الهندسية (Hardware)</h2>
+        <h2>واجهة الصيانة الهندسية</h2>
         <div class="details-box">
-            <div class="service-item">🔍 فحص البورد تحت الميكروسكوب الرقمي</div>
+            <div class="service-item">🔍 فحص البورد تحت الميكروسكوب</div>
             <div class="service-item">🔋 تبديل بطاريات وشاشات أصلية</div>
-            <div class="service-item">💎 إصلاح أعطال الشحن والباور (IC)</div>
+            <div class="service-item">💎 إصلاح أعطال الشحن والباور</div>
             <div class="service-item">💧 صيانة أجهزة متضررة بالسوائل</div>
         </div>
     </div>
@@ -86,10 +88,9 @@
         <h2>من أنا والخدمات</h2>
         <div class="details-box">
             <p class="bio-text">
-                أنا <span class="highlight">حسين تيناوي</span>، خبير صيانة الهواتف الذكية وتكنولوجيا الأنظمة. مؤسس <span class="highlight">Tinawi Tech</span>، أتخصص في صيانة الهاردوير الدقيقة وحلول السوفتوير المعقدة. جاهز لخدمتكم بين <span class="highlight">بورصة ودمشق</span> للتأكد من أداء أجهزتكم بأعلى كفاءة وبمواعيد دقيقة.
+                أنا <span class="highlight">حسين تيناوي</span>، خبير صيانة الهواتف الذكية وتكنولوجيا الأنظمة. مؤسس <span class="highlight">Tinawi Tech</span>، أتخصص في صيانة الهاردوير الدقيقة وحلول السوفتوير المعقدة. جاهز لخدمتكم بين <span class="highlight">بورصة ودمشق</span>.
             </p>
             <div class="service-item">📞 هاتف/واتساب: 05317337891</div>
-            <div class="service-item">📍 بورصة - دمشق</div>
         </div>
     </div>
 
